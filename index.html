@@ -5,6 +5,7 @@
     <title>WEB - Welcome</title>
     <meta charset="utf-8">
     <style>
+
         @media all and (min-width: 480px) {
             * {
                 margin: 0;
@@ -23,7 +24,7 @@
                 margin-bottom: 0;
             }
 
-            h1 a {
+            a {
                 text-decoration: none;
             }
 
@@ -41,6 +42,7 @@
 </head>
 
 <body>
+    <input type="button" value="night" onclick="changeMode()">
     <h1><a href="index.html">WEB</a></h1>
 
     <div id="container">
@@ -77,6 +79,25 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
             Disqus.</a></noscript>
 
+    <script>
+        function changeMode() {
+            if (document.querySelector('input').value === 'night') {
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color = 'white';
+                document.querySelector('a').style.color = 'white';
+                document.querySelector('ol').style.borderRightColor = 'white';
+                document.querySelector('h1').style.borderBottomColor = 'white';
+                document.querySelector('input').value = 'day';
+            } else {
+                document.querySelector('body').style.backgroundColor = 'white';
+                document.querySelector('body').style.color = 'black';
+                document.querySelector('a').style.color = 'black';
+                document.querySelector('ol').style.borderRightColor = 'black';
+                document.querySelector('h1').style.borderBottomColor = 'black';
+                document.querySelector('input').value = 'night';
+            }
+        }
+    </script>
 </body>
 
 </html>
