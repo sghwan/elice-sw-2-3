@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 5px solid blue;
+            margin: 10px;
+            text-align: center;
+        }
+
+        #container {
+            border: 5px solid red;
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+        }
+    </style>
+</head>
+
+<body>
+    <div>TOP</div>
+    <div id="container">
+        <div>LEFT</div>
+        <div>CENTER</div>
+        <div>RIGHT</div>
+    </div>
+    <div>BOTTOM</div>
+</body>
+
+</html>
