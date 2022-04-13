@@ -5,5 +5,22 @@
             let contents = ['html', 'css', 'js'];
             contents.push('react');
         </script>
+        <h1>Loop</h1>
+        <script>
+            debugger;
+            for(let i = 0; i < 100; i++) {
+                console.log(i);
+            }
+        </script>
+        <h1>Loop + Array</h1>
+        <script>
+            let $ul = document.createElement('ul');
+            for(let i = 0; i < contents.length; i++) {
+                let list = document.createElement('li');
+                list.innerHTML = contents[i];
+                $ul.appendChild(list);
+            }
+            document.body.appendChild($ul);
+        </script>
     </body>
 </html>
