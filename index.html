@@ -1,102 +1,91 @@
 <!doctype html>
 <html>
-
-<head>
-    <title>WEB - Welcome</title>
-    <meta charset="utf-8">
-    <style>
-        @media all and (min-width: 480px) {
-            * {
-                margin: 0;
-                padding: 0;
+    <head>
+        <title>WEB - Welcome</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                border-bottom:10px solid green;
+                padding:30px;
+                margin-bottom:0;
             }
-
-            #container {
-                display: grid;
-                grid-template-columns: 150px 1fr;
-                padding-top: 0;
-            }
-
-            h1 {
-                border-bottom: 1px solid black;
-                padding: 30px;
-                margin-bottom: 0;
-            }
-
-            a {
+            h1 a{
                 text-decoration: none;
             }
-
-            ol {
-                border-right: 1px solid black;
-                margin-top: 0;
-                padding: 30px;
+            ol{
+                
+                margin-top:0;
             }
-
-            div {
-                padding: 30px;
+            @media all and (min-width: 480px) {
+                #container{
+                    display:grid;
+                    grid-template-columns: 150px 1fr;
+                }
+                ol{
+                    border-right:10px solid pink;
+                }
             }
-        }
-    </style>
-</head>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            console.log(this);
+        </script>
+        <input type="button" onclick="console.log(this);" value="1">
+        <input type="button" onclick="console.log(this);" value="2">
+        <input type="button" value="night" 
+            onclick="
+                let aArr = document.querySelectorAll('a');
+                // 만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고, 
+                if(this.value === 'night'){
+                    document.querySelector('body').style.backgroundColor = 'black';
+                    document.querySelector('body').style.color = 'white';
+                    // 이 버튼의 value값을 day로 변경한다. 
+                    this.value = 'day';
+                    
+                    for(let i = 0; i < aArr.length; i++) {
+                        aArr[i].style.color = 'white';
+                    }
+                } else {
+                    // 아니라면 아래 코드가 실행된다. 
+                    document.querySelector('body').style.backgroundColor = 'white';
+                    document.querySelector('body').style.color = 'black';
+                    // 이 버튼의 value값을 night로 변경한다. 
+                    this.value = 'night';
 
-<body>
-    <input type="button" value="night" onclick="changeMode()">
-    <h1><a href="index.html">WEB</a></h1>
-
-    <div id="container">
-        <ol>
-            <li><a href="1.html">html</a></li>
-            <li><a href="2.html">css</a></li>
-            <li><a href="3.html">javascript</a></li>
-        </ol>
-
-        <div>
-            <h2>Welcome</h2>
-            Hello, WEB!!!!!
-        </div>
-    </div>
-
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://elice-sw2.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-
-    <script>
-        function changeMode() {
-            if (this.value === 'night') {
+                    for(let i = 0; i < aArr.length; i++) {
+                        aArr[i].style.color = 'black';
+                    }
+                }
+            "
+        >
+<!--         
+        <input type="button" value="night" 
+            onclick="
                 document.querySelector('body').style.backgroundColor = 'black';
                 document.querySelector('body').style.color = 'white';
-                document.querySelector('a').style.color = 'white';
-                document.querySelector('ol').style.borderRightColor = 'white';
-                document.querySelector('h1').style.borderBottomColor = 'white';
-                this.value = 'day';
-            } else {
+            "
+        >
+        <input type="button" value="day" 
+            onclick="
                 document.querySelector('body').style.backgroundColor = 'white';
                 document.querySelector('body').style.color = 'black';
-                document.querySelector('a').style.color = 'black';
-                document.querySelector('ol').style.borderRightColor = 'black';
-                document.querySelector('h1').style.borderBottomColor = 'black';
-                this.value = 'night';
-            }
-        }
-    </script>
-</body>
+            "
+        > -->
+        <h1><a href="index.html">WEB</a></h1>
 
+        <div id="container">
+            <ol>
+                <li><a href="1.html">html</a></li>
+                <li><a href="2.html">css</a></li>
+                <li><a href="3.html">javascript</a></li>
+            </ol>
+            <div>
+                <h2>Welcome</h2>
+                Hello, WEB!!!!!
+            </div>
+        </div>
+        
+    </body>
 </html>
