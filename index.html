@@ -5,7 +5,6 @@
     <title>WEB - Welcome</title>
     <meta charset="utf-8">
     <style>
-
         @media all and (min-width: 480px) {
             * {
                 margin: 0;
@@ -81,20 +80,20 @@
 
     <script>
         function changeMode() {
-            if (document.querySelector('input').value === 'night') {
+            if (this.value === 'night') {
                 document.querySelector('body').style.backgroundColor = 'black';
                 document.querySelector('body').style.color = 'white';
                 document.querySelector('a').style.color = 'white';
                 document.querySelector('ol').style.borderRightColor = 'white';
                 document.querySelector('h1').style.borderBottomColor = 'white';
-                document.querySelector('input').value = 'day';
+                this.value = 'day';
             } else {
                 document.querySelector('body').style.backgroundColor = 'white';
                 document.querySelector('body').style.color = 'black';
                 document.querySelector('a').style.color = 'black';
                 document.querySelector('ol').style.borderRightColor = 'black';
                 document.querySelector('h1').style.borderBottomColor = 'black';
-                document.querySelector('input').value = 'night';
+                this.value = 'night';
             }
         }
     </script>
