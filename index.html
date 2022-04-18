@@ -4,6 +4,7 @@
 <head>
     <title>WEB - Welcome</title>
     <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
         h1 {
             border-bottom: 10px solid green;
@@ -36,12 +37,16 @@
 <body>
     <script>
         function night() {
-            document.querySelector('body').style.backgroundColor = 'black';
-            document.querySelector('body').style.color = 'white';
-            let aArr = document.querySelectorAll('a');
-            for (let i = 0; i < aArr.length; i++) {
-                aArr[i].style.color = 'white';
-            }
+            //document.querySelector('body').style.backgroundColor = 'black';
+            //$('body').css('background-color', "black");
+            //document.querySelector('body').style.color = 'white';
+            //$('body').css('color', "white");
+            $('body').css('background-color', "black").css('color', 'white');
+            // let aArr = document.querySelectorAll('a');
+            // for (let i = 0; i < aArr.length; i++) {
+            //     aArr[i].style.color = 'white';
+            // }
+            $('a').css('color', 'white');
         }
         function day() {
             document.querySelector('body').style.backgroundColor = 'white';
@@ -52,8 +57,6 @@
             }
         }
     </script>
-    <input type="button" onclick="console.log(this);" value="1">
-    <input type="button" onclick="console.log(this);" value="2">
     <input type="button" value="night" onclick="
                 // 만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고, 
                 if(this.value === 'night'){
