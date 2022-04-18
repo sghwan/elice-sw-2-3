@@ -4,44 +4,28 @@
 <head>
     <title>WEB - Welcome</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="index.css">
-     <script type="module">
-         import { dayNight } from './daynight.js'
-         console.log(dayNight);
-     </script>
+    <script type="module">
+        import { dayNight } from './daynight.js';
+        function listener(event) {
+            if (event.target.value === 'night') {
+                dayNight('night');
+                event.target.value ='day';
+            } else {
+                dayNight('day');
+                event.target.value ='night'
+            }
+        }
+        document.querySelector('#dayNightBtn').addEventListener("click", listener);
+    </script>
 </head>
 
 <body>
     <div id="target">toogle</div>
     <input type="button" value="hide/show" onclick="$('#target').toggle();">
-    <input type="button" value="night" onclick="
-                // 만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고, 
-                if(this.value === 'night'){
-                    dayNight('night');
-                    // 이 버튼의 value값을 day로 변경한다. 
-                    this.value = 'day';         
-                } else {
-                    // 아니라면 아래 코드가 실행된다. 
-                    dayNight('day');
-                    // 이 버튼의 value값을 night로 변경한다. 
-                    this.value = 'night';
-                }
-            ">
-    <!--         
-        <input type="button" value="night" 
-            onclick="
-                document.querySelector('body').style.backgroundColor = 'black';
-                document.querySelector('body').style.color = 'white';
-            "
-        >
-        <input type="button" value="day" 
-            onclick="
-                document.querySelector('body').style.backgroundColor = 'white';
-                document.querySelector('body').style.color = 'black';
-            "
-        > -->
+    <input type="button" id="dayNightBtn" value="night">
     <h1><a href="index.html">WEB</a></h1>
 
     <div id="container">
