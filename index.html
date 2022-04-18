@@ -30,18 +30,6 @@
         Hello, WEB
     </article>
     <script>
-        // function nav() {
-        //     for (let i = 0; i < topics.length; i++) {
-        //         let li = document.createElement("li");
-        //         let a = document.createElement('a');
-
-        //         a.setAttribute('href', '/read/' + topics[i].id);
-        //         a.innerText = topics[i].title;
-
-        //         li.appendChild(a);
-        //         document.querySelector('nav ol').appendChild(li);
-        //     }
-        // }
 
         let navTag = "";
         function nav() {
@@ -64,25 +52,6 @@
             }
             document.querySelector("nav ol").innerHTML = navTag;
         }
-
-        // let nav = function () {
-        //     let navTag = "";
-        //     for (let i = 0; i < topics.length; i++) {
-        //         navTag =
-        //             navTag +
-        //             `<li><a href="/read/${topics[i].id}">${topics[i].title}</a></li>`;
-        //     }
-        //     document.querySelector("nav ol").innerHTML = navTag;
-        // }
-        // let nav = () => {
-        //     let navTag = "";
-        //     for (let i = 0; i < topics.length; i++) {
-        //         navTag =
-        //             navTag +
-        //             `<li><a href="/read/${topics[i].id}">${topics[i].title}</a></li>`;
-        //     }
-        //     document.querySelector("nav ol").innerHTML = navTag;
-        // }
 
         nav();
     </script>
