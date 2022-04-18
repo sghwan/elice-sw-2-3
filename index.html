@@ -7,7 +7,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="index.css">
-     <script src="daynigth.js"></script>
+     <script type="module">
+         import { dayNight } from './daynight.js'
+         console.log(dayNight);
+     </script>
 </head>
 
 <body>
@@ -16,12 +19,12 @@
     <input type="button" value="night" onclick="
                 // 만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고, 
                 if(this.value === 'night'){
-                    night();
+                    dayNight('night');
                     // 이 버튼의 value값을 day로 변경한다. 
                     this.value = 'day';         
                 } else {
                     // 아니라면 아래 코드가 실행된다. 
-                    day();
+                    dayNight('day');
                     // 이 버튼의 value값을 night로 변경한다. 
                     this.value = 'night';
                 }
