@@ -37,6 +37,7 @@
     </ol>
     <script>
         let selectedId = null;
+        
         function navHandler(e) {
             //1.링크가 작동하지 않아야 한다.
             e.preventDefault();
@@ -44,6 +45,7 @@
             selectedId = Number(e.target.id);
             read();
         }
+
         async function nav() {
             //await is only valid in async functions and the top level bodies of modules
             //위와 같은 에러가 발생한다. 즉, await을 써줄려면 async가 필수적이다.
@@ -60,11 +62,13 @@
                          </li>`).join("");
             document.querySelector('nav>ol').innerHTML = tag;
         }
+
         function welcome() {
             document.querySelector("article").innerHTML = `<h2>welcome</h2>Hello, WEB`;
             selectedId = null;
             control();
         }
+
         async function read() {
             //3.ID와 일치하는 topics의 원소를 찾는다.
             let response = await fetch("http://localhost:3000/topics/" + selectedId);
@@ -75,6 +79,7 @@
             document.querySelector("article").innerHTML = content;
             control();
         }
+
         async function createHandler(e) {
             e.preventDefault();
             const t = e.target.title.value; //name = title이기때문
@@ -92,6 +97,7 @@
             read();
 
         }
+
         function create() {
             const content = `
                 <form onsubmit="createHandler(event)">
@@ -102,6 +108,7 @@
             `;
             document.querySelector("article").innerHTML = content;
         }
+
         async function updateHandler(e) {
             e.preventDefault();
             const t = e.target.title.value; //name = title이기때문
@@ -117,9 +124,8 @@
             nav();
             selectedId = data.id;
             read();
-
-
         }
+
         async function update() {
             let response = await fetch("http://localhost:3000/topics/" + selectedId)
             let topic = await response.json();
@@ -133,6 +139,7 @@
             control();
 
         }
+
         async function del() {
             let response = await fetch("http://localhost:3000/topics/" + selectedId, {
                 method: "DELETE"
@@ -140,6 +147,7 @@
             nav();
             welcome();
         }
+
         function control() {
             let contextUI = ``;
             if (selectedId !== null) {
@@ -153,6 +161,7 @@
                     ${contextUI}    
             `
         }
+
         nav();
         welcome();
         control();
